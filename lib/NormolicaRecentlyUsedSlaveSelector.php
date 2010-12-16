@@ -4,10 +4,12 @@ class NormolicaRecentlyUsedSlaveSelector extends NormolicaSlaveSelector {
 
     protected function doSelection() {
         if (!self::$recentSlave instanceof Mongo) {
-            $slaveSelectorObj = new NormolicaRandomSlaveSelector($this->slaveNodes);
-            self::recentSlave = $slaveSelectorObj->getSelectedSlave();
+            $slaveSelectorObj = new NormolicaRandomSlaveSelector();
+            $slaveSelectorObj->setSlaveNodes($this->slaveNodes);
+            self::$recentSlave = $slaveSelectorObj->getSelectedSlave();
         }        
-        return self::$recentSlave;
+        $this->selectedSlave = self::$recentSlave;
+        return $this;
     }
 }
 
