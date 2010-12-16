@@ -3,7 +3,7 @@ abstract class NormolicaSlaveSelector {
     /**
      * @returntype array
     **/
-    protected  $slaveNodes;
+    protected  $slaveNodes = array();
 
     protected $selectedSlave;
 
@@ -16,8 +16,11 @@ abstract class NormolicaSlaveSelector {
     }
 
     public function getSelectedSlave() {
-        $this->doSelection();
-        return $this->selectedSlave;
+        if (count($this->slaveNodes) > 0) {
+            $this->doSelection();
+            return $this->selectedSlave;
+        }
+        return null;
     }
 
     protected abstract function doSelection();
