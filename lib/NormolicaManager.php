@@ -41,9 +41,6 @@ class NormolicaManager {
     }
 
     public function getReadServer() {
-
-
-
         $count = count(self::$connectionArrayRead);
         if ($count <= 0) {
             return false;
@@ -54,13 +51,6 @@ class NormolicaManager {
         }
 
         return $this->slaveSelector->getSelectedSlave();
-        /**
-        else {
-            $last_index = $count - 1;
-            $index = mt_rand(0, $last_index);
-            return self::$connectionArrayRead[$index];
-        }
-        **/
     }
 
     public function setSlaveSelectorMode(NormolicaSlaveSelector $slaveSelector) {
