@@ -10,3 +10,6 @@ Slaves / Readable Nodes can be selected in different ways:
 
 See examples folder for usage
 
+## Dependencies
+* [PHPUnit](http://www.phpunit.de/manual/current/en/index.html) (I have been using 3.5.5)
+* [Mongo PHP Driver](http://us.php.net/mongo)
