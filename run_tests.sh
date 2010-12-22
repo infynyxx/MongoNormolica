@@ -1,4 +1,4 @@
 #!/bin/sh
 
 #Run all test classes
-phpunit tests/
+phpunit  --colors --verbose tests/
